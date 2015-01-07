@@ -26,7 +26,6 @@ class Category < ActiveRecord::Base
     end
   end
 
-
   def createUriArray
     content = []
     self.videos.each do |video|
@@ -43,5 +42,12 @@ class Category < ActiveRecord::Base
     self.articles.destroy_all
   end
 
- 
+  def updateThumbnail
+    thumbnails = []
+      Google::Search::Image.new(:query => self.name, :image_size => :medium).each do |image|
+        thumbnails << image.thumbnail_uri if image.thumbnail_width > 100 && image.thumbnail_height > 100
+      end
+    self.update(thumbnail: thumbnails.sample)
+    self.save
+  end
 end
