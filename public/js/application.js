@@ -116,6 +116,7 @@ $(document).ready(function() {
       });
       $("input:checked").each(function() {
         $("a[href='" + $(this).prev().attr('href') + "']").remove();
+        $("#" + this.name + "").remove();
         $(this).remove();
       });
     }).fail(function(response) {
