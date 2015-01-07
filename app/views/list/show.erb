@@ -3,7 +3,7 @@
   <% @user.likes.order(created_at: :desc).each do |like| %>
     <li><a href="<%= like.uri %>" target="_blank"><%= like.title %></a>
     <li>
-    <a href="<%= like.uri %>" class="twitter-share-button">Tweet</a>
+    <a href="https://twitter.com/share=", data-lang='en', data-url="<%= like.uri %>", data-text="Check this out!", class="twitter-share-button"></a>
     <div class="fb-share-button" data-href="<%= like.uri %>" data-layout="button_count"></div>
   <% end %>
 </ul>
