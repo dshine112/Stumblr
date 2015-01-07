@@ -26,4 +26,17 @@ class Category < ActiveRecord::Base
     end
   end
 
+
+  def createUriArray
+    content = []
+    self.videos.each do |video|
+      content << {id: video.id, url: video.uri, type: "video"}
+    end
+    self.articles.each do |article|
+      content << {id: article.id, url: article.uri, type: "article"}
+    end
+    return content.shuffle
+  end
+
+
 end
