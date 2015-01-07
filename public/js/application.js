@@ -123,6 +123,14 @@ $(document).ready(function() {
     twitterButton();
   })
 
+  // JavaScript used to toggle between show and edit partials on profile page
+  $("#editButton").on('click', function(event) {
+    var $target = $(event.target);
+    $target.text($target.text() === "Edit List" ? "Show List" : "Edit List");
+    $("#showListDiv").toggle();
+    $("#editListDiv").toggle();
+  });
+
 });
 
 function youtubeId(url) {
