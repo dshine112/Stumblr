@@ -131,6 +131,37 @@ $(document).ready(function() {
     $("#editListDiv").toggle();
   });
 
+  //AJAX call to delete videos and articles from posts
+  $("#editList").on('submit', function(event) {
+    event.preventDefault();
+    var $target = $(event.target);
+    $.ajax({
+      url: $target.attr('action'),
+      type: 'DELETE',
+      data: $target.serialize()
+    }).done(function(response) {
+      var n = noty({
+        text: 'List Update Successful!',
+        type: 'success',
+        layout: 'topCenter',
+        theme: 'relax',
+        timeout: 1000
+      });
+      $("input:checked").each(function() {
+        $("a[href='" + $(this).prev().attr('href') + "']").remove();
+        $(this).remove();
+      });
+    }).fail(function(response) {
+      var n = noty({
+        text: 'List Update Failed!',
+        type: 'error',
+        layout: 'topCenter',
+        theme: 'relax',
+        timeout: 1000
+      });
+    });
+  })
+
 });
 
 function youtubeId(url) {
