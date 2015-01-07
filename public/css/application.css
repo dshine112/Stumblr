@@ -156,3 +156,13 @@ header {
   width: 80px;
   display: inline-block;
 }
+
+.twitter-share-button-template {
+  display: none;
+}
+
+#twitterDiv{
+
+  margin:5px 0 0 32px;
+}
+

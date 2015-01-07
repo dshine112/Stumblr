@@ -29,6 +29,7 @@ $(document).ready(function() {
         $content.attr("src", content[contentNum].url)
         $content.attr("contentId", content[contentNum].id)
       }
+      twitterButton();
     })
   })
 
@@ -60,6 +61,7 @@ $(document).ready(function() {
         $content.attr("src", content[contentNum].url)
         $content.attr("contentId", content[contentNum].id)
       }
+      twitterButton();
     })
   })
 
@@ -107,6 +109,7 @@ $(document).ready(function() {
     } else {
       $("#content iframe").attr("src", content[contentNum].url)
     }
+    twitterButton();
   })
 
   // Javascript used to go to go back to the previous piece of content
@@ -117,6 +120,7 @@ $(document).ready(function() {
     } else {
       $("#content iframe").attr("src", content[contentNum].url)
     }
+    twitterButton();
   })
 
 });
@@ -132,4 +136,14 @@ function youtubeId(url) {
 
 function httpConvert(url) {
   return url = url.replace(/^http:\/\//, 'https://')
+}
+
+function twitterButton() {
+  $("#twitterDiv").empty();
+  var $clone = $(".twitter-share-button-template").clone();
+  $clone.show();
+  $clone.attr("data-url", httpConvert(content[contentNum].url));
+  $clone.attr("class", "twitter-share-button");
+  $("#twitterDiv").append($clone);
+  $.getScript("http://platform.twitter.com/widgets.js");
 }
