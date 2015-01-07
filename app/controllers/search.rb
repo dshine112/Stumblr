@@ -17,3 +17,10 @@ post '/search' do
   end
   @category.createUriArray.to_json
 end
+
+get '/search/:id' do |id|
+  @category = Category.find(id)
+  @category.searchCount += 1
+  @category.save
+  @category.createUriArray.to_json
+end
