@@ -6,14 +6,14 @@
     <% end %>
   </ul>
 
-  <h2> Most Liked Videos </h2>
+  <h2> Today's Most Liked Videos </h2>
   <ul class="topList">  
     <% @videos.order(likeCount: :desc)[0..4].each do |video| %>
       <li><a href="<%= video.uri %>" target="_blank"><%= video.title %><%= video.likeCount %></a><li>
     <% end %>
   </ul>
 
-  <h2> Most Liked Articles </h2>
+  <h2> Today's Most Liked Articles </h2>
   <ul class="topList">  
     <% @articles.order(likeCount: :desc)[0..4].each do |article| %>
       <li><a href="<%= article.uri %>" target="_blank"><%= article.title %><%= article.likeCount %></a><li>
