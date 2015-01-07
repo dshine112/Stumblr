@@ -210,7 +210,7 @@ header {
 
 /* Top */
 
-.topList {
+.topList, .topContent {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -221,7 +221,24 @@ header {
 }
 
 .topList li {
+  max-height: 100px;
+  max-width: 100px;
+  font-size: 1.5em;
+  display: inline-block;
+}
+  
+.topContent li {
   margin: 0;
   padding: 0;
+}
+
+.topContent li a {
+  color: black;
+  text-decoration: none;
+}
+
+.topContent li a:hover {
+  color: white;
+  background-color: black;
 }
 
