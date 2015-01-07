@@ -1,0 +1,23 @@
+<div class="container">
+  <h2> Most Searched Categories </h2>
+  <ul class="topList">  
+    <% @categories.order(searchCount: :desc)[0..4].each do |category| %>
+      <li><span id="topName"><%= category.name %></span><span id="topNum"> <%= category.searchCount %></span><li>
+    <% end %>
+  </ul>
+
+  <h2> Most Liked Videos </h2>
+  <ul class="topList">  
+    <% @videos.order(likeCount: :desc)[0..4].each do |video| %>
+      <li><a href="<%= video.uri %>" target="_blank"><%= video.title %><%= video.likeCount %></a><li>
+    <% end %>
+  </ul>
+
+  <h2> Most Liked Articles </h2>
+  <ul class="topList">  
+    <% @articles.order(likeCount: :desc)[0..4].each do |article| %>
+      <li><a href="<%= article.uri %>" target="_blank"><%= article.title %><%= article.likeCount %></a><li>
+    <% end %>
+  </ul>
+
+</div>
