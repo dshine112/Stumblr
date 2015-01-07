@@ -131,6 +131,11 @@ $(document).ready(function() {
     });
   })
 
+  var showList = new List('show-list', {
+    valueNames: ['title'],
+    plugins: [ListFuzzySearch()]
+  });
+
 });
 
 function youtubeId(url) {

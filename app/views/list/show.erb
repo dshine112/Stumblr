@@ -1,11 +1,16 @@
 <h2>Liked Content</h2>
-<ul id="showList">  
-  <% @user.likes.order(created_at: :desc).each do |like| %>
-    <li><a href="<%= like.uri %>" target="_blank"><%= like.title %></a>
-    <li>
-    <div id="<%= like.id %>">
-      <a href="https://twitter.com/share=", data-lang='en', data-url="<%= like.uri %>", data-text="Check this out!", class="twitter-share-button"></a>
-      <div class="fb-share-button" data-href="<%= like.uri %>" data-layout="button_count"></div>
-    </div>
-  <% end %>
-</ul>
+<div id="show-list">
+  <input class="fuzzy-search" />
+  <ul class="list" id="showList">  
+    <% @user.likes.order(created_at: :desc).each do |like| %>
+      <li><a href="<%= like.uri %>" target="_blank" class="title"><%= like.title %></a>
+        <div id="<%= like.id %>">
+          <a href="https://twitter.com/share=", data-lang='en', data-url="<%= like.uri %>", data-text="Check this out!", class="twitter-share-button"></a>
+          <div class="fb-share-button" data-href="<%= like.uri %>" data-layout="button_count"></div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+

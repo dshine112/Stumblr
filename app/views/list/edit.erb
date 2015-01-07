@@ -1,7 +1,7 @@
 <h2>Edit List</h2>
 <form action="/list/update" id="editList">
   <% @user.likes.order(created_at: :desc).each do |like| %>
-      <a href="<%= like.uri %>" target="_blank"><%= like.title %></a><input type="checkbox" name="<%= like.id %>">
+      <a href="<%= like.uri %>" target="_blank" class="title"><%= like.title %></a><input type="checkbox" name="<%= like.id %>">
   <% end %>
   <br>
   <input type="submit" value="Delete Selected Content">
