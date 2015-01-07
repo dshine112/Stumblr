@@ -1,0 +1,6 @@
+<h2>Liked Content</h2>
+<ul id="showList">  
+  <% @user.likes.order(created_at: :desc).each do |like| %>
+    <li><a href="<%= like.uri %>" target="_blank"><%= like.title %></a><li>
+  <% end %>
+</ul>
