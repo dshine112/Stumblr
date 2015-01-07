@@ -11,21 +11,7 @@ $(document).ready(function() {
       data: $target.serialize(),
       dataType: "JSON"
     }).done(function(response) {
-      content = response
-      $("#initial").remove();
-      $("#searchWrapper img").hide();
-      $("#search").show();
-      $("#likeButtons").show();
-      $("#content").show();
-      $content = $("#content iframe")
-      contentNum = 0;
-      if (content[contentNum].type === "video") {
-        $content.attr("src", youtubeId(content[contentNum].url))
-        $content.attr("contentId", content[contentNum].id)
-      } else {
-        $content.attr("src", content[contentNum].url)
-        $content.attr("contentId", content[contentNum].id)
-      }
+      searchFinish(response);
       twitterButton();
     })
   })
@@ -40,21 +26,7 @@ $(document).ready(function() {
       type: 'GET',
       dataType: "JSON"
     }).done(function(response) {
-      content = response
-      $("#initial").hide();
-      $("#searchWrapper img").hide();
-      $("#search").show();
-      $("#likeButtons").show();
-      $("#content").show();
-      $content = $("#content iframe")
-      contentNum = 0;
-      if (content[contentNum].type === "video") {
-        $content.attr("src", youtubeId(content[contentNum].url))
-        $content.attr("contentId", content[contentNum].id)
-      } else {
-        $content.attr("src", content[contentNum].url)
-        $content.attr("contentId", content[contentNum].id)
-      }
+      searchFinish(response);
       twitterButton();
     })
   })
@@ -186,4 +158,22 @@ function searchSetup() {
   $("#initial").show();
   $(".homepage").hide();
   $("#searchWrapper img").show();
+}
+
+function searchFinish(response) {
+  content = response
+  $("#initial").remove();
+  $("#searchWrapper img").hide();
+  $("#search").show();
+  $("#likeButtons").show();
+  $("#content").show();
+  $content = $("#content iframe")
+  contentNum = 0;
+  if (content[contentNum].type === "video") {
+    $content.attr("src", youtubeId(content[contentNum].url))
+    $content.attr("contentId", content[contentNum].id)
+  } else {
+    $content.attr("src", content[contentNum].url)
+    $content.attr("contentId", content[contentNum].id)
+  }
 }
