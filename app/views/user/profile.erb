@@ -2,5 +2,16 @@
 
   <span>Welcome, <%= @user.username %>!</span>
 
+  <span id="welcomeProfile">Welcome, <%= @user.username %>!</span><br>
+
+  <button id="editButton" type="button">Edit List</button>
+
+  <div id="showListDiv">
+    <%= erb :'list/show' %>
+  </div>
+
+  <div id="editListDiv">
+    <%= erb :'list/edit' %>
+  </div>
 
 </div>
