@@ -12,8 +12,6 @@ $(document).ready(function() {
       dataType: "JSON"
     }).done(function(response) {
       searchFinish(response);
-      twitterButton();
-      facebookButton();
     })
   })
 
@@ -28,7 +26,7 @@ $(document).ready(function() {
       dataType: "JSON"
     }).done(function(response) {
       searchFinish(response);
-      twitterButton();
+
     })
   })
 
@@ -77,7 +75,6 @@ $(document).ready(function() {
       $("#content iframe").attr("src", content[contentNum].url)
     }
     resetCounter(contentNum, content)
-    twitterButton();
   })
 
   // Javascript used to go to go back to the previous piece of content
@@ -88,7 +85,6 @@ $(document).ready(function() {
     } else {
       $("#content iframe").attr("src", content[contentNum].url)
     }
-    twitterButton();
   })
 
   // JavaScript used to toggle between show and edit partials on profile page
@@ -136,6 +132,11 @@ $(document).ready(function() {
     plugins: [ListFuzzySearch()]
   });
 
+  var editList = new List('edit-list', {
+    valueNames: ['title'],
+    plugins: [ListFuzzySearch()]
+  });
+
 });
 
 function youtubeId(url) {
@@ -151,15 +152,15 @@ function httpConvert(url) {
   return url = url.replace(/^http:\/\//, 'https://')
 }
 
-function twitterButton() {
-  $("#twitterDiv").empty();
-  var $clone = $(".twitter-share-button-template").clone();
-  $clone.show();
-  $clone.attr("data-url", httpConvert(content[contentNum].url));
-  $clone.attr("class", "twitter-share-button");
-  $("#twitterDiv").append($clone);
-  $.getScript("http://platform.twitter.com/widgets.js");
-}
+// function twitterButton() {
+//   $("#twitterDiv").empty();
+//   var $clone = $(".twitter-share-button-template").clone();
+//   $clone.show();
+//   $clone.attr("data-url", httpConvert(content[contentNum].url));
+//   $clone.attr("class", "twitter-share-button");
+//   $("#twitterDiv").append($clone);
+//   $.getScript("http://platform.twitter.com/widgets.js");
+// }
 
 function resetCounter(counter, array) {
   if (counter > array.length) {
