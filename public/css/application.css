@@ -85,7 +85,8 @@ header {
   margin-bottom: 15px;
 }
 
-#searchWrapper img {
+#searchWrapper #loaderImage {
+  margin: 0 auto;
   display: none;
 }
 
