@@ -13,6 +13,7 @@ $(document).ready(function() {
     }).done(function(response) {
       searchFinish(response);
       twitterButton();
+      facebookButton();
     })
   })
 
