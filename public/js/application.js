@@ -63,6 +63,43 @@ $(document).ready(function() {
     })
   })
 
+  //AJAX call to update likeCount of content and create Like
+  $("#like").on('click', function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: '/' + content[contentNum].type + '/' + content[contentNum].id,
+      type: 'POST'
+    }).done(function(response) {
+      console.log(response)
+      if (response === "exists") {
+        var n = noty({
+          text: 'Like Already Exists!',
+          type: 'warning',
+          layout: 'topCenter',
+          theme: 'relax',
+          timeout: 1000
+        });
+      } else {
+        var n = noty({
+          text: 'Like Successful!',
+          type: 'success',
+          layout: 'topCenter',
+          theme: 'relax',
+          timeout: 1000
+        });
+      }
+    }).fail(function(response) {
+      var n = noty({
+        text: 'Like Failed!',
+        type: 'error',
+        layout: 'topCenter',
+        theme: 'relax',
+        timeout: 1000
+      });
+    });
+  })
+
+
 });
 
 function youtubeId(url) {
