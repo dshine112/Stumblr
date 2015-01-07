@@ -16,5 +16,14 @@ class Category < ActiveRecord::Base
     end
     return [videos, articles, self.id]
   end
+  
+  def createContent(content)
+    content[0].each do |info|
+      Video.create(uri: info[0], likeCount: 0, title: info[1], category_id: content[2])
+    end
+    content[1].each do |info|
+      Article.create(uri: info[0], likeCount: 0, title: info[1], category_id: content[2])
+    end
+  end
 
 end
