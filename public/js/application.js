@@ -10,3 +10,7 @@ function youtubeId(url) {
     return "//www.youtube.com/embed/" + match[2];
   }
 }
+
+function httpConvert(url) {
+  return url = url.replace(/^http:\/\//, 'https://')
+}
