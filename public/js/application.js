@@ -3,10 +3,7 @@ $(document).ready(function() {
   //AJAX call for initial search with search bar
   $('#search').on('submit', function(event) {
     event.preventDefault();
-    $("#search").hide();
-    $("#initial").show();
-    $(".homepage").hide();
-    $("#searchWrapper img").show();
+    searchSetup();
     var $target = $(event.target);
     $.ajax({
       url: $target.attr('action'),
@@ -36,10 +33,7 @@ $(document).ready(function() {
   //AJAX call for initial search with thumbnail images
   $('.thumbnailSearch').on('click', function(event) {
     event.preventDefault();
-    $("#search").hide();
-    $("#initial").show();
-    $(".homepage").hide();
-    $("#searchWrapper img").show();
+    searchSetup();
     var $target = $(event.target);
     $.ajax({
       url: '/search/' + $target.attr('categoryId'),
@@ -185,4 +179,11 @@ function twitterButton() {
   $clone.attr("class", "twitter-share-button");
   $("#twitterDiv").append($clone);
   $.getScript("http://platform.twitter.com/widgets.js");
+}
+
+function searchSetup() {
+  $("#search").hide();
+  $("#initial").show();
+  $(".homepage").hide();
+  $("#searchWrapper img").show();
 }
