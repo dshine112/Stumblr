@@ -75,6 +75,7 @@ $(document).ready(function() {
     } else {
       $("#content iframe").attr("src", content[contentNum].url)
     }
+    resetCounter(contentNum, content)
     twitterButton();
   })
 
@@ -151,6 +152,12 @@ function twitterButton() {
   $clone.attr("class", "twitter-share-button");
   $("#twitterDiv").append($clone);
   $.getScript("http://platform.twitter.com/widgets.js");
+}
+
+function resetCounter(counter, array) {
+  if (counter > array.length) {
+    counter = -1
+  }
 }
 
 function searchSetup() {
