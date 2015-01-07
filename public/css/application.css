@@ -179,11 +179,13 @@ header {
 }
 
 #showList {
+  padding: 0;
   list-style: none;
 }
 
 #showList li {
   font-size: 1.2em;
+  margin-bottom: 4px;
 }
 
 #showList li a:hover {
@@ -197,6 +199,7 @@ header {
 }
 
 #editListUl {
+  padding: 0;
   list-style: none;
 }
 
