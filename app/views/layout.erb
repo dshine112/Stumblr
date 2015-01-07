@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!-- Comment line above and uncomment line below if working offline -->
+  <!-- <script type="js/jquery-1.11.1.min.js"></script> -->
   <script src="/js/application.js"></script>
-
-  <title></title>
+  <title>STUMBLR</title>
 </head>
 <body>
-  <%= yield %>
-</body>
+ <header>
+   <h1 id="logo">STUMBLR</h1>
+  <nav>
+    <ul id="navBar">
+      <% if !session[:user_id] %>
+        <li><a href="/">STUMBLE</a></li>
+        <li> <a href="/top">TOP</a></li>
+        <li><a href="/signup">SIGNUP</a></li>
+        <li><a href="/login">LOGIN</a></li>
+      <% else %>
+        <li> <a href="/">STUMBLE</a></li>
+        <li> <a href="/top">TOP</a></li>
+        <li><a href="/profile/<%= session[:user_id] %>"><%= User.find(session[:user_id]).username %></a></li>
+        <li><a href="/logout">LOGOUT</a></li>
+      <% end %>
+    </ul>
+  </nav>
+  </header>
+    <%=yield%>
+
+  </body>
 </html>
+
