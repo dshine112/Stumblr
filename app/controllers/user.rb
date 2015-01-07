@@ -27,6 +27,19 @@ post '/signup' do
   end
 end
 
+get '/profile/:id' do |id|
+  @user = User.find(id)
+  if @user.id == session[:user_id]
+    erb :'user/profile'
+  else
+    if session[:user_id]
+      redirect '/'
+    else
+      redirect '/login'
+    end
+  end
+end
+
 get '/logout' do
   session[:user_id] = nil
   redirect '/'
