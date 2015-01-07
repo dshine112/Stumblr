@@ -19,3 +19,9 @@ post '/article/:id' do |id|
   "exists"
   end
 end
+
+delete'/list/update' do
+  params.keys.each do |id|
+    Like.destroy(id)
+  end
+end
