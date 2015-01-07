@@ -112,3 +112,47 @@ header {
   display: none;
   font-size: 8em;
 }
+
+/* Content */
+
+#content {
+  display: none;
+  text-align: center;
+}
+
+#likeButtons {
+  text-align: center;
+  display: none;
+}
+
+#likeButtons a{
+  display: inline-block;
+}
+#likeButtons a img{
+  margin: 0 40px;
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+}
+
+/* Content */
+
+#content {
+  display: none;
+  text-align: center;
+}
+
+#likeButtons {
+  text-align: center;
+  display: none;
+}
+
+#likeButtons a{
+  display: inline-block;
+}
+#likeButtons a img{
+  margin: 0 40px;
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+}
