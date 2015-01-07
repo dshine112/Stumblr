@@ -201,6 +201,10 @@ header {
   font-size: 3em;
 }
 
+.twitter-share-button[style] { 
+  vertical-align: text-bottom !important; 
+}
+
 /* Top */
 
 .topList {

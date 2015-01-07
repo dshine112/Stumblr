@@ -1,6 +1,9 @@
 <h2>Liked Content</h2>
 <ul id="showList">  
   <% @user.likes.order(created_at: :desc).each do |like| %>
-    <li><a href="<%= like.uri %>" target="_blank"><%= like.title %></a><li>
+    <li><a href="<%= like.uri %>" target="_blank"><%= like.title %></a>
+    <li>
+    <a href="<%= like.uri %>" class="twitter-share-button">Tweet</a>
+    <div class="fb-share-button" data-href="<%= like.uri %>" data-layout="button_count"></div>
   <% end %>
 </ul>
