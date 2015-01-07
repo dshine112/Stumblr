@@ -76,3 +76,39 @@ header {
   font-size: 2em;
   display: inline-block;
 }
+
+
+/* Search Bar */
+
+#searchWrapper {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#searchWrapper img {
+  display: none;
+}
+
+#searchWrapper input {
+  font-size: 2em;
+  font-family: 'jaapokkisubtract-regular';
+}
+
+#searchWrapper input[type=submit] {
+  border: none;
+  background-color: white;
+}
+
+#searchWrapper input[type=submit]:hover {
+  color: white;
+  background-color: black;
+}
+
+#searching {
+  font-size: 7em;
+}
+
+#initial {
+  display: none;
+  font-size: 8em;
+}
