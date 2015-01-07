@@ -1,6 +1,6 @@
 <h2>Liked Content</h2>
 <div id="show-list">
-  <input class="fuzzy-search" />
+  <input class="fuzzy-search" placeholder='Search'/>
   <ul class="list" id="showList">  
     <% @user.likes.order(created_at: :desc).each do |like| %>
       <li><a href="<%= like.uri %>" target="_blank" class="title"><%= like.title %></a>

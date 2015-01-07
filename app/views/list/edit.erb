@@ -1,8 +1,14 @@
 <h2>Edit List</h2>
 <form action="/list/update" id="editList">
-  <% @user.likes.order(created_at: :desc).each do |like| %>
-      <a href="<%= like.uri %>" target="_blank" class="title"><%= like.title %></a><input type="checkbox" name="<%= like.id %>">
-  <% end %>
+  <div id="edit-list">
+    <input class="fuzzy-search" placeholder='Search'/>
+      <ul class="list" id="editListUl">
+        <% @user.likes.order(created_at: :desc).each do |like| %>
+        <li><a href="<%= like.uri %>" target="_blank" class="title"><%= like.title %></a><input type="checkbox" name="<%= like.id %>"></li>
+        <% end %>
+      </ul>
+  </div>
   <br>
   <input type="submit" value="Delete Selected Content">
 </form>
+ 
