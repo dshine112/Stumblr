@@ -38,5 +38,10 @@ class Category < ActiveRecord::Base
     return content.shuffle
   end
 
+  def deleteContent
+    self.videos.destroy_all
+    self.articles.destroy_all
+  end
 
+ 
 end
