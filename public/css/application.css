@@ -1,0 +1,15 @@
+/* Font */
+@font-face {
+  font-family: 'jaapokkisubtract-regular';
+  src: url('../font/jaapokkisubtract-regular.eot');
+  src: url('../font/jaapokkisubtract-regular.eot?#iefix') format('embedded-opentype'),
+       url('../font/jaapokkisubtract-regular.woff') format('woff'),
+       url('../font/jaapokkisubtract-regular.ttf') format('truetype'),
+       url('../font/jaapokkisubtract-regular.svg#jaapokkisubtract-regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'jaapokkisubtract-regular';
+}
