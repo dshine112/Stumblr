@@ -57,3 +57,22 @@ body {
 header {
   text-align: center;
 }
+
+/* Homepage */
+
+.homepage {
+  list-style: none;
+  padding: 0;
+}
+
+.homepageImgs {
+  height: 100px;
+  width: 100px;
+}
+
+.homepage li {
+  max-height: 100px;
+  max-width: 100px;
+  font-size: 2em;
+  display: inline-block;
+}
