@@ -99,6 +99,16 @@ $(document).ready(function() {
     });
   })
 
+  // Javascript used to go to the next piece of content
+  $("#next").on('click', function(event) {
+    event.preventDefault();
+    if (content[++contentNum].type === "video") {
+      $("#content iframe").attr("src", youtubeId(content[contentNum].url))
+    } else {
+      $("#content iframe").attr("src", content[contentNum].url)
+    }
+  })
+
 
 });
 
