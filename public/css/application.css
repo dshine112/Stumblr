@@ -13,3 +13,47 @@
 body {
   font-family: 'jaapokkisubtract-regular';
 }
+
+/* Layout */
+
+.container {
+  text-align: center;
+}
+
+#logo {
+  margin: 0;
+}
+
+#navBar {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+#navBar a {
+  color: black;
+  font-size: 1.5em;
+  padding: 10px 25px;
+}
+
+#navBar li a:visted {
+  color: black;
+}
+
+#navBar li a:hover {
+  color: white;
+  background-color: black;
+}
+
+#navBar li{
+  margin: 0 1em;
+  display: inline-block;
+}
+
+#navBar li a{
+  text-decoration: none;
+}
+
+header {
+  text-align: center;
+}
