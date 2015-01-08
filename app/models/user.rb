@@ -5,5 +5,10 @@ class User < ActiveRecord::Base
     uniqueness:  { case_sensitive: false }
   has_secure_password
 
+  validates :password, :length =>{
+    :minimum => 8,
+  }, :on => :create
+
+
   has_many :likes
 end
