@@ -104,6 +104,9 @@ $(document).ready(function() {
       type: 'DELETE',
       data: $target.serialize()
     }).done(function(response) {
+      $(".fuzzy-search").val("");
+      showList.fuzzySearch.search('');
+      editList.fuzzySearch.search('');
       var n = noty({
         text: 'List Update Successful!',
         type: 'success',
