@@ -16,7 +16,7 @@ class Category < ActiveRecord::Base
     end
     return [videos, articles]
   end
-  
+
   def createContent(content)
     content[0].each do |info|
       Video.create(uri: info[0], likeCount: 0, title: info[1], category_id: id)
@@ -50,4 +50,16 @@ class Category < ActiveRecord::Base
     update(thumbnail: thumbnails.sample)
     save
   end
+
+
+  def timeCheck
+    if created_at.to_date < (Time.now.to_date - 1)
+      deleteContent
+      createContent(search)
+      updateThumbnail
+      update(created_at: Time.now)
+      save
+    end
+  end
+
 end
