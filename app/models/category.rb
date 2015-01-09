@@ -19,10 +19,10 @@ class Category < ActiveRecord::Base
 
   def createContent(content)
     content[0].each do |info|
-      Video.create(uri: info[0], likeCount: 0, title: info[1], category_id: id)
+      videos.create(uri: info[0], likeCount: 0, title: info[1])
     end
     content[1].each do |info|
-      Article.create(uri: info[0], likeCount: 0, title: info[1], category_id: id)
+      articles.create(uri: info[0], likeCount: 0, title: info[1])
     end
   end
 
