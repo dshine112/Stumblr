@@ -51,3 +51,13 @@ class Category < ActiveRecord::Base
     self.save
   end
 end
+
+  def timeCheck 
+    if created_at.to_date < (Time.now.to_date - 1)
+      deleteContent
+      createContent(search)
+      updateThumbnail
+      update(created_at: Time.now)
+      save
+    end
+  end
