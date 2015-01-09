@@ -16,7 +16,7 @@ class Category < ActiveRecord::Base
     end
     return [videos, articles, self.id]
   end
-  
+
   def createContent(content)
     content[0].each do |info|
       Video.create(uri: info[0], likeCount: 0, title: info[1], category_id: content[2])
@@ -44,15 +44,15 @@ class Category < ActiveRecord::Base
 
   def updateThumbnail
     thumbnails = []
-      Google::Search::Image.new(:query => self.name, :image_size => :medium).each do |image|
-        thumbnails << image.thumbnail_uri if image.thumbnail_width > 100 && image.thumbnail_height > 100
-      end
+    Google::Search::Image.new(:query => self.name, :image_size => :medium).each do |image|
+      thumbnails << image.thumbnail_uri if image.thumbnail_width > 100 && image.thumbnail_height > 100
+    end
     self.update(thumbnail: thumbnails.sample)
     self.save
   end
-end
 
-  def timeCheck 
+
+  def timeCheck
     if created_at.to_date < (Time.now.to_date - 1)
       deleteContent
       createContent(search)
@@ -61,3 +61,5 @@ end
       save
     end
   end
+
+end
