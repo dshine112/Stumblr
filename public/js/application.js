@@ -26,7 +26,6 @@ $(document).ready(function() {
       dataType: "JSON"
     }).done(function(response) {
       searchFinish(response);
-
     })
   })
 
