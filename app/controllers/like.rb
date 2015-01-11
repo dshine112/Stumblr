@@ -5,7 +5,7 @@ post '/article/:id' do |id|
     article.save
     Like.create(user_id: session[:user_id], article_id: article.id, uri: article.uri, title: article.title)
   else
-  "exists"
+    "exists"
   end
 end
 
