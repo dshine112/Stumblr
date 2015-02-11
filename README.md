@@ -1,1 +1,1 @@
-###Describe your project here.
+Stumblr is a single page Stumble Upon clone written with Sinatra.
