@@ -36,7 +36,6 @@ $(document).ready(function() {
       url: '/' + content[contentNum].type + '/' + content[contentNum].id,
       type: 'POST'
     }).done(function(response) {
-      console.log(response)
       if (response === "exists") {
         var n = noty({
           text: 'Like Already Exists!',
